@@ -1,4 +1,7 @@
 # ECE6780_MedEmbeddings01
+
+ECE6780_Project_Group1.pdf contains the final report.
+
 ECE 6780 Group 1
 
 Go to starting directory and type:

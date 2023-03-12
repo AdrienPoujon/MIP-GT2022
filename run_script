@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#Baseline Supervised
+#python training/training_supervised/train.py --epochs 25 --train_csv_path './csv_files/COVID_KAGGLE/train.csv' --test_csv_path './csv_files/COVID_KAGGLE/test.csv' --save_path './save/first_trial.pth.tar' --dataset 'covid_kaggle' --model_type 'resnet18' --n_cls 4
+
+#Explainable Model
+#python training/training_explainable/training_explainable.py --epochs 25 --train_csv_path './csv_files/COVID_KAGGLE/train.csv' --test_csv_path './csv_files/COVID_KAGGLE/test.csv' --save_path './save/explainable/VGG_19_CovidKaggle.tar' --dataset 'covid_kaggle' --n_cls 4
+#python training/training_explainable/training_explainable.py --epochs 25 --save_path './save/explainable/VGG_19_COVID-QU-Ex.tar' --dataset 'COVID-QU-Ex' --n_cls 3
+
+python training/training_main/main_linear.py --batch_size 64 --dataset 'covid_kaggle' --epochs 25 --device 'cuda:1' --super 0 --ckpt '/home/kiran/Desktop/Dev/SupCon/save/SupCon/Chexpert_Cluster_models/200_n_n_n_n_1_1_10_Chexpert_Cluster_lr_resnet18_0.001_decay_0.0001_bsz_64_temp_0.07_trial_0__0/last.pth' --img_dir '/data/Datasets/COVID-19_Radiography_Dataset' --train_csv_path '/home/kiran/Desktop/Dev/SupCon/chest_csv_files/COVID_KAGGLE/train.csv' --test_csv_path '/home/kiran/Desktop/Dev/SupCon/chest_csv_files/COVID_KAGGLE/test.csv'
+
+#SupCon Test
+#python training/training_supcon/training_supcon.py --epochs 25 --train_csv_path '/data/Datasets/CheXpert-v1.0-small/train_filtered.csv' --num_methods 1 --method1 'pleural_effusion' --dataset 'Chexpert' --batch_size 64
